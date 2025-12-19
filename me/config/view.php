@@ -25,6 +25,6 @@ return [
     |
     */
 
-    'compiled' => env('VIEW_COMPILED_PATH', '/tmp'),
+    'compiled' => env('VIEW_COMPILED_PATH', sys_get_temp_dir()),
 
 ];
