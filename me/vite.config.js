@@ -11,13 +11,8 @@ export default defineConfig({
     vue(),
   ],
   build: {
-    outDir: 'public/build',   // Vue build output goes inside Laravel public/build
-    assetsDir: 'assets',      // JS/CSS/images go inside public/build/assets
+    outDir: 'public/build',   // IMPORTANT: output goes into Laravel public folder
+    assetsDir: 'assets',      // JS/CSS/images inside public/build/assets
   },
-  base: '/build/',            // ensures index.html references JS/CSS correctly
-  server: {
-    host: 'localhost',
-    port: 5173,
-    strictPort: true,
-  },
+  base: '/build/',            // ensures correct <script>/<link> URLs
 });

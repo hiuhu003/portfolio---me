@@ -1,32 +1,17 @@
 {
-  "$schema": "https://vercel.com/docs/project-configuration-schema",
-
-  "builds": [
-    {
-      "src": "resources/js/app.js",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "public/build" }
-    },
-    {
-      "src": "api/index.php",
-      "use": "vercel-php@0.7.4"
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.4"
     }
-  ],
-
+  },
   "routes": [
     {
       "src": "/build/(.*)",
       "dest": "/public/build/$1"
     },
     {
-      "src": "/api/(.*)",
-      "dest": "/api/index.php"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/public/build/index.html"
+      "dest": "/api/index.php"
     }
-  ],
-
-  "outputDirectory": "public/build"
+  ]
 }
