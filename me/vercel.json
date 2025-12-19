@@ -1,12 +1,36 @@
 {
     "$schema": "https://vercel.com/docs/project-configuration-schema",
-    "outputDirectory": "public",
-    "functions": {
-        "api/index1.php": {
-            "runtime": "vercel-php@0.7.4"
+    "builds": [
+        {
+            "src": "api/index.php",
+            "use": "vercel-php@0.7.4"
+        },
+        {
+            "src": "public/**",
+            "use": "@vercel/static"
         }
-    },
-    "rewrites": [
-        { "source": "/(.*)", "destination": "/api/index1.php" }
-    ]
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "/api/index.php"
+        },
+        {
+            "src": "/assets/(.*)",
+            "dest": "/public/build/assets/$1"
+        },
+        {
+            "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot))",
+            "dest": "/public/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
+    "build": {
+        "env": {
+            "NODE_ENV": "production"
+        }
+    }
 }
