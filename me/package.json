@@ -3,7 +3,8 @@
     "private": true,
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+         "vercel-build": "npm install && npm run build"
     },
     "devDependencies": {
         "@tailwindcss/postcss": "^4.1.18",
