@@ -10,7 +10,7 @@
   },
   "resources/js/app.js": {
     "file": "assets/app-Cz9ctsU2.js",
-    "name": "app", 
+    "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [

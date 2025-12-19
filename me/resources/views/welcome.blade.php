@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Portfolio</title>
-    @if(file_exists(public_path('build/manifest.json')))
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @else
-        <link rel="stylesheet" href="/build/assets/app-BLthNWWj.css">
-        <link rel="stylesheet" href="/build/assets/app-DJTf-ORP.css">
-        <script type="module" src="/build/assets/app-Cz9ctsU2.js"></script>
-    @endif
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    <div id="app"></div>
+  <div id="app"></div>
 </body>
 </html>
