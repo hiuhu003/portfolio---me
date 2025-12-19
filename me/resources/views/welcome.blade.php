@@ -1,2 +1,2 @@
-<link rel="stylesheet" href="{{ asset('public/build/assets/app.css') }}">
-<script type="module" src="{{ asset('public/build/assets/app.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
+<script type="module" src="{{ asset('build/assets/app.js') }}"></script>
