@@ -14,5 +14,5 @@ export default defineConfig({
     outDir: 'public/build',   // IMPORTANT: output goes into Laravel public folder
     assetsDir: 'assets',      // JS/CSS/images inside public/build/assets
   },
-  base: '/build/',            // ensures correct <script>/<link> URLs
+  base: '/',            // ensures correct <script>/<link> URLs
 });
