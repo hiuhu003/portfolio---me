@@ -145,8 +145,30 @@ export default {
         { name: "Java", percentage: 85 },
         { name: "Flutter", percentage: 88 }
       ],
-      videoUrl: videoFile
+      videoUrl: videoFile,
+      hasFlippedOnScroll: false
     };
+  },
+  mounted() {
+    // Auto-play video
+    this.$refs.videoPlayer?.play().catch(() => {});
+
+    // Auto-flip on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !this.hasFlippedOnScroll) {
+          this.hasFlippedOnScroll = true;
+
+          // Flip web card 1 second after scrolling into view
+          setTimeout(() => { this.isWebFlipped = true; }, 1000);
+
+          // Flip mobile card 4 seconds after web card
+          setTimeout(() => { this.isMobileFlipped = true; }, 5000);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(this.$el);
   },
   methods: {
     toggleWebFlip() {
