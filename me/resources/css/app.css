@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #646cff;
+  --react-blue: #61dafb;
+}
+
+/* Optional glow effect */
+.glow-primary {
+  filter: drop-shadow(0 0 1.5em var(--primary));
+}
