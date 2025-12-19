@@ -10,8 +10,10 @@ require __DIR__.'/../vendor/autoload.php';
 
 // Bootstrap Laravel
 $app = require_once __DIR__.'/../bootstrap/app.php';
+
 $app->useStoragePath(sys_get_temp_dir());
 
+config(['view.compiled' => sys_get_temp_dir()]);
 $kernel = $app->make(Kernel::class);
 
 // Handle request
