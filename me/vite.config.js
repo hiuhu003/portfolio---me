@@ -11,8 +11,13 @@ export default defineConfig({
     vue(),
   ],
   build: {
+    manifest: true,
     outDir: 'public/build',   // IMPORTANT: output goes into Laravel public folder
-    assetsDir: 'assets',      // JS/CSS/images inside public/build/assets
+    assetsDir: 'assets', 
+     rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },       // JS/CSS/images inside public/build/assets
   },
-  base: '/',            // ensures correct <script>/<link> URLs
 });
